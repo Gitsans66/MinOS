@@ -1,4 +1,4 @@
-import sys, os, os.path
+import sys, os
 import time
 
 def clear():

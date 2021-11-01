@@ -1,6 +1,5 @@
 import os
 import time
-from colorama import Fore, Back
 
 def clear():
 	time.sleep(1)
@@ -15,6 +14,10 @@ def help():
 	print("menu - выйти в меню")
 	print("################################")
 	print("math - открыть калькулятор")
+	print("################################")
+	print("create - создать что-то")
+	print("delet - удалить что-то")
+	print("ls - вывести содержимое папки")
 	print("################################")
 
 def menu():
@@ -50,6 +53,13 @@ while True:
 		os.system("cls")
 		os.chdir("..")
 		menu()
+	elif command == str("create"):
+		os.system("python System16/create.py")
+	elif command == str("delet"):
+		os.system("python System16/delet.py")
+	elif command == str("ls"):
+		print(os.listdir())
+	
 	else:
 		print("Комманда не была обнаружена")
 		menu()
