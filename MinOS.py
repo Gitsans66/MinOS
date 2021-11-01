@@ -1,5 +1,6 @@
 import os
 import time
+from colorama import Fore, Back
 
 def clear():
 	time.sleep(1)
@@ -7,10 +8,13 @@ def clear():
 	pass
 
 def help():
+	clear()
 	print("################################")
 	print("Все команды")
 	print("exit - выйти из ос")
 	print("menu - выйти в меню")
+	print("################################")
+	print("math - открыть калькулятор")
 	print("################################")
 
 def menu():
@@ -30,14 +34,21 @@ menu()
 while True:
 	print("Введите команду>>")
 	command = input();
-	if command == "help":
-		clear()
+	if command == str("help"):
 		help()
-	elif command == "exit":
+	elif command == str("exit"):
 		print("Завершение работы")
 		clear()
 		break;
-	elif command == "menu":
+	elif command == str("menu"):
+		menu()
+	elif command == str("math"):
+		print("Starting mMath...")
+		time.sleep(0.2)
+		os.chdir("System16")
+		os.system("math.bat")
+		os.system("cls")
+		os.chdir("..")
 		menu()
 	else:
 		print("Комманда не была обнаружена")
