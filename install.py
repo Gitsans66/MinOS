@@ -37,7 +37,7 @@ def install(path):
 		file_path = os.path.join(path, name)
 		os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
-		file = open(file_path, "w")
+		file = open(file_path, "w", encoding="UTF-8")
 		file.write(download[name])
 		file.close()
 
@@ -46,7 +46,8 @@ def install(path):
 
 	sure = getch("Startup MinOS?", "Y/N")
 	if sure == "Y":
-		os.system(os.path.join(path, "start.bat"))
+		os.chdir(path)
+		os.system("python MinOS.py")
 
 
 REPO_URL = "https://api.github.com/repos/Gitsans66/MinOS/contents"
