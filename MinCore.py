@@ -2,7 +2,7 @@ import sys, os
 import time
 
 def clear():
-	time.sleep(0.02)
+	time.sleep(0.002)
 	os.system("cls")
 	pass
 
